@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Notion Slideshow Creator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #e74c3c;
+    }
+    .slides-container {
+      margin: 40px 0;
+      height: 300px;
+      position: relative;
+      cursor: pointer;
+    }
+    .slide {
+      width: 250px;
+      height: 150px;
+      background-color: #3498db;
+      position: absolute;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+    .slide-front {
+      background-color: #2980b9;
+      transform: translateX(50px) translateY(20px);
+      z-index: 3;
+    }
+    .slide-back {
+      background-color: #3498db;
+      transform: translateX(0) translateY(0);
+      z-index: 2;
+    }
+    button {
+      background-color: #2ecc71;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #27ae60;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Notion Slideshow Creator</h1>
+    <p>A desktop application that lets you easily create custom slideshows for Notion using GitHub Pages.</p>
+    
+    <div class="slides-container">
+      <div class="slide slide-front"></div>
+      <div class="slide slide-back"></div>
+    </div>
+    
+    <button>Get Started</button>
+    
+    <h2>Features</h2>
+    <ul>
+      <li>Drag-and-drop image uploading</li>
+      <li>Visual preview and reordering of slides</li>
+      <li>Automatic GitHub Pages deployment</li>
+      <li>One-click copy of embed link for Notion</li>
+    </ul>
+  </div>
+  
+  <script>
+    document.querySelector('button').addEventListener('click', () => {
+      alert('This is a static fallback page. The React app should load instead of this page.');
+    });
+  </script>
+</body>
+</html> 

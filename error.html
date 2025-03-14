@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error - Notion Slideshow Creator</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .error-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            color: #e53935;
+            margin-top: 0;
+        }
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .actions {
+            margin-top: 30px;
+        }
+        button {
+            background-color: #2196f3;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #1976d2;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <h1>Application Error</h1>
+        <p>Sorry, the Notion Slideshow Creator application encountered an error while loading.</p>
+        <p>This could be due to one of the following reasons:</p>
+        <ul style="text-align: left;">
+            <li>The application files may be corrupted</li>
+            <li>There might be a compatibility issue with your system</li>
+            <li>A required resource could not be loaded</li>
+        </ul>
+        <p>Please try restarting the application. If the problem persists, you may need to reinstall the application.</p>
+        <div class="actions">
+            <button onclick="window.location.reload()">Reload Application</button>
+        </div>
+    </div>
+    <script>
+        // You can add any error logging or additional functionality here
+        console.error('Application failed to load properly');
+    </script>
+</body>
+</html> 

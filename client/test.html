@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Client Directory Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f0f8ff;
+      color: #333;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #4169e1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Client Directory Test</h1>
+    <p>If you can see this page, Electron can successfully load files from the client directory.</p>
+    
+    <h2>Directory Information:</h2>
+    <pre id="directory-info">Loading...</pre>
+    
+    <script>
+      // Display some debugging information
+      document.addEventListener('DOMContentLoaded', () => {
+        const dirInfo = document.getElementById('directory-info');
+        if (dirInfo && window.process) {
+          dirInfo.textContent = `Current working directory: ${window.process.cwd()}\n`;
+          dirInfo.textContent += `__dirname: ${window.__dirname || 'Not available'}\n`;
+          dirInfo.textContent += `NODE_ENV: ${window.process.env.NODE_ENV || 'Not set'}\n`;
+        }
+      });
+    </script>
+  </div>
+</body>
+</html> 

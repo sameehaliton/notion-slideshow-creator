@@ -1,0 +1,98 @@
+const { app, BrowserWindow } = require("electron");
+const path = require("path");
+
+function createWindow() {
+  const win = new BrowserWindow({
+    width: 800,
+    height: 600,
+    webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: false,
+    },
+  });
+
+  // Create a simple HTML file
+  const fs = require("fs");
+  const htmlPath = path.join(__dirname, "test.html");
+
+  fs.writeFileSync(
+    htmlPath,
+    `
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="UTF-8">
+        <title>Test App</title>
+        <style>
+          body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+          }
+          h1 {
+            color: #2196f3;
+          }
+          .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          }
+          button {
+            background-color: #2196f3;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+          }
+          button:hover {
+            background-color: #1976d2;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <h1>Electron Test App</h1>
+          <p>If you can see this, Electron is working correctly!</p>
+          <p>Current directory: <span id="current-dir"></span></p>
+          <p>App path: <span id="app-path"></span></p>
+          <button id="test-button">Click Me</button>
+        </div>
+        <script>
+          // You can include JavaScript here
+          document.getElementById('test-button').addEventListener('click', () => {
+            alert('Button clicked!');
+          });
+          
+          // Display some environment info
+          document.getElementById('current-dir').textContent = process.cwd();
+          document.getElementById('app-path').textContent = process.argv[0];
+        </script>
+      </body>
+    </html>
+  `
+  );
+
+  win.loadFile("test.html");
+  win.webContents.openDevTools();
+}
+
+app.whenReady().then(createWindow);
+
+app.on("window-all-closed", () => {
+  if (process.platform !== "darwin") {
+    app.quit();
+  }
+});
+
+app.on("activate", () => {
+  if (BrowserWindow.getAllWindows().length === 0) {
+    createWindow();
+  }
+});

@@ -1,0 +1,40 @@
+/* client/src/components/ImageUploader.css */
+.uploader-container {
+    border: 2px dashed #cccccc;
+    border-radius: 5px;
+    padding: 30px;
+    text-align: center;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+    margin: 20px;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .uploader-container.dragging {
+    border-color: #4285f4;
+    background-color: #e8f0fe;
+  }
+  
+  .uploader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .uploader-content button {
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+  }
+  
+  .uploader-content button:hover {
+    background-color: #3367d6;
+  }
